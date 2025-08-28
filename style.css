@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@300;400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "K2D", sans-serif;
+}
+
+body {
+    background: #F5F5F5;
+    color: #111;
+    line-height: 1.7;
+}
+
+/* === NAV === */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6%;
+    border-bottom: 1px solid #eee;
+}
+
+nav .logo {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.8rem;
+}
+
+nav ul li {
+    cursor: pointer;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+nav ul li::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    left: 0;
+    bottom: -6px;
+    background: #111;
+    transition: width 0.3s ease;
+}
+nav ul li:hover::after {
+    width: 100%;
+}
+
+nav .hire-btn {
+    border: 2px solid #111;
+    padding: 0.8rem 2.4rem;
+    border-radius: 30px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+nav .hire-btn:hover {
+    background: #111;
+    color: #fff;
+    transform: scale(1.07);
+}
+
+/* === HERO === */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem 6%;
+    padding-bottom: 0;
+}
+
+.hero h1 {
+    padding-bottom: 1rem;
+    font-size: 11.5rem;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #000000 0%, #3f3f3f 50%, #3f3f3f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero h1 span {
+    font-size: 8.5rem;
+    line-height: 1.1;
+}
+
+.hero .profile {
+    text-align: end;
+    margin-bottom: 180px;
+}
+
+.hero img {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    margin-top: -70px;   /* moves image upward */
+    transition: transform 0.4s ease;
+}
+
+.hero img:hover {
+    transform: scale(1.07);
+}
+
+.hero p {
+    font-size: 1.8rem;
+    text-align: right;
+}
+
+/* === ABOUT === */
+.about {
+    padding: 6rem 6%;
+    padding-top: 0;
+}
+
+.about-btn {
+    border: 2px solid #111;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+}
+
+.about h2 {
+    margin-bottom: 2.5rem;
+    font-size: 3.2rem;
+    line-height: 1.3;
+}
+
+.about .about-content {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about img {
+    width: 800px;
+    border-radius: 12px;
+}
+
+.stats {
+    margin-top: 1.5rem;
+    margin-left: 4rem;
+}
+
+.stats p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #5E5C5C;
+}
+
+.stats p span {
+    font-size: 2.8rem;
+    color: #111;
+}
+
+/* === SKILLS === */
+.skills {
+  padding: 6rem 6%;
+  display: grid;
+  grid-template-columns: 1fr 2fr; 
+  gap: 10.5rem;
+  align-items: start;
+}
+
+.skills h2 {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.skills .cv-btn {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 0.8rem 2rem;
+    background: #111;
+    color: #fff;
+    border-radius: 35px;
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+.skills .cv-btn:hover {
+    background: #333;
+    transform: scale(1.07);
+}
+
+.skills-divider {
+    width: 35rem;
+}
+
+/* Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem;
+    margin-top: 2.5rem;
+    margin-left: 3rem;
+}
+
+/* Card */
+.card {
+    background: #FAFAFA;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 2rem;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+.card h3 {
+    font-size: 2rem;
+}
+.card p {
+    font-size: 1.4rem;
+    color: #666;
+}
+
+/* Arrow */
+.arrow {
+    align-self: flex-end;   
+    font-size: 2.2rem;
+    color: #444;
+    transition: transform 0.3s ease;
+    padding-top: 30px;
+}
+.card:hover .arrow {
+    transform: translateX(8px);
+}
+
+/* Dark UI/UX card */
+.card.dark {
+    background: url('digital-abstract-3d-render-pattern-minimal-art-black-3840x2160-7124.jpg') no-repeat center/cover;
+    color: #fff;
+    border: none;
+    position: relative;
+}
+.card.dark p {
+    color: #e0e0e0;
+}
+.card.dark .arrow {
+    color: #fff;
+    margin-top: 35px;
+}
+.card.dark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.65), rgba(0,0,0,0.25));
+    border-radius: 12px;
+    z-index: 0;
+}
+.card.dark h3,
+.card.dark p,
+.card.dark .arrow {
+    position: relative;
+    z-index: 1;
+}
+
+/* === EXPERIENCE === */
+.experience {
+    padding: 6rem 6%;
+    background-color: #FAFAFA;
+}
+
+.ex-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.ex-head h3 {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.experience h2 {
+    margin-bottom: 1.5rem;
+    font-size: 3.2rem;
+    line-height: 1.3;
+}
+
+.experience-content {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.stats-head h3 {
+    font-size: 1.7rem;
+    margin-top: 25px;
+}
+.stats-head p {
+    font-size: 1.4rem;
+    color: #666;
+}
+
+.stats-experience {
+    margin-left: 14rem;
+}
+.stats-experience p {
+    font-size: 2.8rem;
+    text-align: right;
+    margin-top: 30px;
+}
+
+/* === SCROLL FADE-IN === */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

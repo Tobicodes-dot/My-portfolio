@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TobiCodes Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">TobiCodes</div>
+    <ul>
+      <li>About Me</li>
+      <li>Skills</li>
+      <li>Experience</li>
+      <li>Projects</li>
+      <li>Contact Me</li>
+    </ul>
+    <button class="hire-btn">Hire me</button>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1><span>Software</span><br>Engineer</h1>
+    </div>
+    <div class="profile">
+      <img src="Rectangle 6.png" alt="Profile picture">
+      <p>Hi, I’m Aduroja Moyosore-Oluwa Michael.<br>I build with a modern,<br> distinctive style.</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <button class="about-btn">About Me</button>
+    <h2>I design and build sleek,<br> functional experiences with a<br>unique modern style.</h2>
+    <div class="about-content">
+      <img src="blackhole.jpeg" alt="About me image">
+      <div class="stats">
+        <p><span>+20</span><br><small>Over twenty completed projects</small></p>
+        <br>
+        <p><span>+12</span><br><small>More than twelve awards and certificates</small></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills">
+    <div class="skills-divider">
+        <button class="about-btn">Skills</button>
+        <h2>A comprehensive look<br>at the skills i have to <br>offer</h2>
+        <a href="#" class="cv-btn">View my CV</a>
+    </div>
+    <div class="skills-grid">
+      <!-- Card 1 -->
+        <div class="card">
+            <h3>Web development</h3>
+            <p>Html, css, javascript, php & laravel</p>
+            <span class="arrow">→</span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <h3>App development</h3>
+            <p>Flutter & dart, React.js and python</p>
+            <span class="arrow">→</span>
+        </div>
+
+        <!-- Card 3 (Dark UI/UX) -->
+        <div class="card dark">
+            <h3>UI/UX</h3>
+            <p>Building strategic digital experiences where creativity meets usability.</p>
+            <span class="arrow">↗</span>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <h3>Problem solving</h3>
+            <p>Solving complex problems with creative, modern, and strategic solutions.</p>
+            <span class="arrow">→</span>
+        </div>
+    </div>
+  </section>
+  <section class="experience">
+    <button class="about-btn">Experience</button>
+    <div class="ex-head">
+        <h2>A snapshot of my<br>experience so far</h2>
+        <h3>Highlights from where I’ve worked<br>and the experience I bring forward.</h3>
+    </div>
+    <div class="experience-content">
+      <div class="stats-head">
+        <div>
+            <h3>UI/UX designer at Techies</h3>
+            <p>Highlights from where I’ve worked, and the experience I bring <br>forward.</p>
+        </div>
+        <div>
+            <h3>Web development for Anachambers</h3>
+            <p>Highlights from where I’ve worked, and the experience I bring <br>forward.</p>
+        </div>
+      </div>
+      <div class="stats-experience">
+        <p><span>2023-2024</span></p>
+        <br>
+        <p class="stats-span"><span>2024-Now</span></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 }); // triggers when 20% of section is visible
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
