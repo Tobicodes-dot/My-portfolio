@@ -7,7 +7,7 @@
 ---
 
 ## ✨ About Me  
-👋 Hi, I’m **Moyosore-Oluwa Michael** — but you probably know me as **Tobicodes**.  
+👋 Hi, I’m ** Aduroja Moyosore-Oluwa Michael** — but you probably know me as **Tobicodes**.  
 I’m an upcoming **Software Engineer** passionate about crafting sleek, functional, and user-friendly digital experiences.  
 
 This portfolio is more than just a website — it’s my **digital resume & creative hub** where I showcase:  
