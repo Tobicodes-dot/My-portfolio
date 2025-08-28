@@ -319,10 +319,181 @@ nav .hire-btn:hover {
 .stats-experience {
     margin-left: 14rem;
 }
+
 .stats-experience p {
     font-size: 2.8rem;
     text-align: right;
     margin-top: 30px;
+}
+
+
+.projects-section {
+    padding: 6rem 6%;
+}
+
+.projects-badge {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.projects-section h2{
+    font-size: 3.2rem;
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    justify-content: center;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    height: 200px;
+    width: 350px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.contact-section {
+    padding: 6rem 6%;
+    padding-bottom: 15px;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+}
+
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.contact-header h2 {
+    font-size: 3.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.hire-btn2 {
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 10px 0px;
+    padding-right: 15px;
+    padding-left: 7px;
+    font-size: 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease;
+}
+
+.hire-btn2:hover {
+    background: #333;
+}
+
+.hire-btn2 span {
+  font-size: 34px;       /* icon/text size */
+  background-color: black;
+  color: white;          /* make the arrow visible */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;    /* makes it a circle */
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+    padding: 50px 0;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-size: 29px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.socials {
+    display: flex;
+    gap: 35px;
+    margin-top: 10px;
+}
+
+.socials a {
+    color: #fff;
+    font-size: 35px;
+    text-decoration: none;
+}
+
+.contact-details {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-item h4 {
+    font-size: 25px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 19px;
+    color: #aaa;
+}
+
+.contact-item p a{
+    text-decoration: none;
+    color: #aaa;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    padding: 20px 0;
+    border-top: 1px solid #222;
+    margin-top: 30px;
+}
+
+.footer-rights{
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+
 }
 
 /* === SCROLL FADE-IN === */
