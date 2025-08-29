@@ -6,6 +6,10 @@
     font-family: "K2D", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #F5F5F5;
     color: #111;
@@ -219,9 +223,10 @@ nav .hire-btn:hover {
     min-height: 220px;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, all 0.4s ease;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 .card:hover {
     transform: translateY(-5px);
@@ -245,6 +250,23 @@ nav .hire-btn:hover {
 }
 .card:hover .arrow {
     transform: translateX(8px);
+}
+
+/* Expanded card styling */
+.card.expanded {
+    min-height: 320px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+.card .extra {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+.card.expanded .extra {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 1rem;
 }
 
 /* Dark UI/UX card */
@@ -275,6 +297,7 @@ nav .hire-btn:hover {
     position: relative;
     z-index: 1;
 }
+
 
 /* === EXPERIENCE === */
 .experience {
@@ -364,8 +387,8 @@ nav .hire-btn:hover {
 }
 
 .project-card:hover {
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transform: translateY(-2px);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .contact-section {
@@ -447,6 +470,12 @@ nav .hire-btn:hover {
     color: #fff;
     font-size: 35px;
     text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+    color: #f0a500;
+    transform: scale(1.1);
 }
 
 .contact-details {
@@ -495,6 +524,188 @@ nav .hire-btn:hover {
     color: #666;
 
 }
+/* Modal Background */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0; 
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  backdrop-filter: blur(6px);  /* blur effect */
+  background: rgba(255, 255, 255, 0.2); /* frosted glass feel */
+  justify-content: center; 
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centers everything vertically */
+}
+
+/* Wrapper for QR */
+.qrcode-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Title */
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+/* Note */
+.cv-note {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.cv-note a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.cv-note a:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Modal background */
+.hire-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content */
+.hire-modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  animation: hire-fadeIn 0.3s ease;
+}
+
+/* Close button */
+.hire-close {
+  float: right;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #888;
+}
+.hire-close:hover {
+  color: #000;
+}
+
+/* Form */
+#hire-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+#hire-form input,
+#hire-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+#hire-form textarea {
+  resize: none;
+  height: 100px;
+}
+.hire-submit-btn {
+  padding: 12px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.hire-submit-btn:hover {
+  background: #333;
+}
+
+/* OR section */
+.hire-or-section {
+  margin-top: 1.5rem;
+}
+.hire-or-section p {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+/* WhatsApp button */
+.hire-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.hire-whatsapp-btn img {
+  width: 22px;
+}
+.hire-whatsapp-btn:hover {
+  background: #1DA851;
+}
+
+/* Fade animation */
+@keyframes hire-fadeIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 
 /* === SCROLL FADE-IN === */
 @keyframes fadeUp {

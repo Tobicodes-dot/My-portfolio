@@ -17,7 +17,7 @@
       <li>Projects</li>
       <li>Contact Me</li>
     </ul>
-    <button class="hire-btn">Hire me</button>
+    <button class="hire-btn" id="hireBtn">Hire me</button>
   </nav>
 
   <section class="hero">
@@ -47,37 +47,63 @@
     <div class="skills-divider">
         <button class="about-btn">Skills</button>
         <h2>A comprehensive look<br>at the skills i have to <br>offer</h2>
-        <a href="#" class="cv-btn">View my CV</a>
+        <button class="cv-btn" id="cvBtn">View my CV</button>
+    </div>
+    <!-- Modal -->
+    <div id="cvModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Scan to View My CV</h2>
+        <div class="qrcode-wrapper">
+          <div id="qrcode"></div>
+        </div>
+        <p class="cv-note">Or click <a href="https://drive.google.com/file/d/1QwWKkHYpTkdEjqesMvxhcKUfRdKPMHMU/view?usp=sharing" target="_blank">here</a> to open directly.</p>
+      </div>
     </div>
     <div class="skills-grid">
       <!-- Card 1 -->
-        <div class="card">
-            <h3>Web development</h3>
-            <p>Html, css, javascript, php & laravel</p>
-            <span class="arrow">→</span>
+      <div class="card">
+        <h3>Web development</h3>
+        <p>Html, css, javascript, php & laravel</p>
+        <div class="extra">
+          <p>I build responsive websites with modern frameworks and optimize them for performance.</p>
         </div>
+        <span class="arrow">→</span>
+        
+      </div>
 
-        <!-- Card 2 -->
-        <div class="card">
-            <h3>App development</h3>
-            <p>Flutter & dart, React.js and python</p>
-            <span class="arrow">→</span>
+      <!-- Card 2 -->
+      <div class="card">
+        <h3>App development</h3>
+        <p>Flutter & dart, React.js and python</p>
+        <div class="extra">
+          <p>Cross-platform apps with clean UI and scalable backend integration.</p>
         </div>
+        <span class="arrow">→</span>
+        
+      </div>
 
-        <!-- Card 3 (Dark UI/UX) -->
-        <div class="card dark">
-            <h3>UI/UX</h3>
-            <p>Building strategic digital experiences where creativity meets usability.</p>
-            <span class="arrow">↗</span>
+      <!-- Card 3 -->
+      <div class="card dark">
+        <h3>UI/UX</h3>
+        <p>Building strategic digital experiences where creativity meets usability.</p>
+        <div class="extra">
+          <p>Wireframes, prototyping, and design systems focused on user engagement.</p>
         </div>
+        <span class="arrow">↗</span>
+      </div>
 
-        <!-- Card 4 -->
-        <div class="card">
-            <h3>Problem solving</h3>
-            <p>Solving complex problems with creative, modern, and strategic solutions.</p>
-            <span class="arrow">→</span>
+      <!-- Card 4 -->
+      <div class="card">
+        <h3>Problem solving</h3>
+        <p>Solving complex problems with creative, modern, and strategic solutions.</p>
+        <div class="extra">
+          <p>Breaking down challenges into manageable solutions with innovation.</p>
         </div>
+        <span class="arrow">→</span>
+      </div>
     </div>
+
   </section>
   <section class="experience">
     <button class="about-btn">Experience</button>
@@ -121,7 +147,7 @@
   <section class="contact-section">
     <div class="contact-header">
       <h2>Let’s<br>Connect</h2>
-      <button class="hire-btn2">
+      <button class="hire-btn2" id="hireBtn">
         <span>»</span> Hire me now!
       </button>
     </div>
@@ -151,21 +177,30 @@
     </div>
     <p class="footer-rights">All rights reserved at TobiCodes</p>
   </section>
+  <!-- Hire Me Modal -->
+  <div id="hireModal" class="hire-modal">
+    <div class="hire-modal-content">
+      <span class="hire-close">&times;</span>
+      <h2>Hire Me</h2>
+      <form id="hire-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="hire-submit-btn">Send Message</button>
+      </form>
 
-  <script>
-    const sections = document.querySelectorAll("section");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.2 }); // triggers when 20% of section is visible
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
+      <div class="hire-or-section">
+        <p>Or chat via</p>
+        <a href="https://wa.me/+2349077276277?text=Hi%20Michael,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20hire%20you!" 
+          target="_blank" class="hire-whatsapp-btn">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
