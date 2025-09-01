@@ -46,23 +46,30 @@ document.querySelectorAll('.card').forEach(card => {
 // form  //////////////////////////////////////////////////////////////////
 
         // Modal open/close
+// Navbar button
 const hireBtn = document.getElementById("hireBtn");
-const form = document.getElementById("hire-form");
+// Footer button
+const hireBtn2 = document.querySelector(".hire-btn2");
+
+// Modal
 const hireModal = document.getElementById("hireModal");
-const hireCloseBtn = document.querySelector(".hire-close");
+const closeHireModal = document.querySelector(".hire-close");
 
-hireBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    hireModal.style.display = "flex";
-});
+// Function to open modal
+function openHireModal() {
+  hireModal.style.display = "flex"; // or "block" depending on your CSS
+}
 
-hireCloseBtn.addEventListener("click", () => {
+// Event listeners
+if (hireBtn) hireBtn.addEventListener("click", openHireModal);
+if (hireBtn2) hireBtn2.addEventListener("click", openHireModal);
+
+// Close modal
+if (closeHireModal) {
+  closeHireModal.addEventListener("click", () => {
     hireModal.style.display = "none";
-});
-
-window.addEventListener("click", (e) => {
-    if (e.target === hireModal) hireModal.style.display = "none";
-});
+  });
+}
 
 // EmailJS integration
 document.getElementById("hire-form").addEventListener("submit", function(e) {
@@ -76,4 +83,76 @@ document.getElementById("hire-form").addEventListener("submit", function(e) {
     }, (err) => {
         alert("Failed to send message: " + JSON.stringify(err));
     });
+});
+
+// Certificates Modal Script
+const openCertsModal = document.getElementById("openCertsModal");
+const certsModal = document.getElementById("certsModal");
+const closeCerts = document.querySelector(".close-certs");
+
+openCertsModal.addEventListener("click", () => {
+  certsModal.style.display = "flex";
+});
+
+closeCerts.addEventListener("click", () => {
+  certsModal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === certsModal) {
+    certsModal.style.display = "none";
+  }
+});
+
+
+// DarkMode integration
+const darkToggle = document.getElementById("darkModeToggle");
+
+darkToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("theme", "dark");
+    darkToggle.textContent = "☀️";
+    } else {
+    localStorage.setItem("theme", "light");
+    darkToggle.textContent = "🌙";
+    }
+});
+
+// Load preference on page load
+window.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    darkToggle.textContent = "☀️";
+    }
+});
+
+const hamburger = document.querySelector('.hamburger');
+const navDrawer = document.querySelector('.nav-drawer');
+const navLinks = document.querySelectorAll('.nav-drawer ul li a');
+
+// Toggle drawer
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navDrawer.classList.toggle('show');
+  navOverlay.classList.toggle('show');
+});
+
+// Close drawer when a nav link is clicked
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navDrawer.classList.remove('show');
+    // no preventDefault here → anchor still scrolls properly 🚀
+  });
+});
+
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector("nav");
+  if (window.scrollY > 10) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
 });

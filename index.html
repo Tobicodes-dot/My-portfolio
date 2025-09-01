@@ -10,18 +10,30 @@
 <body>
   <nav>
     <div class="logo">TobiCodes</div>
-    <ul>
-      <li>About Me</li>
-      <li>Skills</li>
-      <li>Experience</li>
-      <li>Projects</li>
-      <li>Contact Me</li>
-    </ul>
-    <button class="hire-btn" id="hireBtn">Hire me</button>
-  </nav>
 
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Slide-in Drawer -->
+    <div id="navMenu" class="nav-drawer">
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+      </ul>
+      <button class="hire-btn" id="hireBtn">Hire me</button>
+    </div>
+  </nav>
+  
   <section class="hero">
-    <div>
+    <div class="title">
+      <a href="#contact" class="freelance-btn">Available for Freelance</a>
       <h1><span>Software</span><br>Engineer</h1>
     </div>
     <div class="profile">
@@ -30,7 +42,7 @@
     </div>
   </section>
 
-  <section class="about">
+  <section class="about" id="about">
     <button class="about-btn">About Me</button>
     <h2>I design and build sleek,<br> functional experiences with a<br>unique modern style.</h2>
     <div class="about-content">
@@ -43,7 +55,7 @@
     </div>
   </section>
 
-  <section class="skills">
+  <section class="skills" id="skills">
     <div class="skills-divider">
         <button class="about-btn">Skills</button>
         <h2>A comprehensive look<br>at the skills i have to <br>offer</h2>
@@ -103,9 +115,9 @@
         <span class="arrow">→</span>
       </div>
     </div>
-
   </section>
-  <section class="experience">
+
+  <section class="experience" id="experience">
     <button class="about-btn">Experience</button>
     <div class="ex-head">
         <h2>A snapshot of my<br>experience so far</h2>
@@ -130,7 +142,7 @@
     </div>
   </section>
 
-  <section class="projects-section">
+  <section class="projects-section" id="projects">
     <button class="about-btn">Projects</button>
     <h2>Explore my various<br>projects</h2>
     
@@ -143,8 +155,58 @@
       <div class="project-card"></div>
     </div>
   </section>
+  <!-- Certificates Section -->
+  <section id="certificates">
+    <button class="about-btn">Achievements</button>
+    <div class="cert-grid">
+      <!-- Sample Certificate Card -->
+      <div class="cert-card">
+        <img src="michael aduroja certificate_page-0001.jpg" alt="Certificate 1">
+        <h3>Web Development</h3>
+        <p>Completed at PLP Academy</p>
+      </div>
 
-  <section class="contact-section">
+      <div class="cert-card">
+        <img src="flutter_app_dev_cert.jpg" alt="Certificate 2">
+        <h3>Flutter App Dev</h3>
+        <p>Simpli-learn</p>
+      </div>
+
+      <div class="cert-card">
+        <img src="Alison_Certificate-6004-41095387_page-0001.jpg" alt="Certificate 3">
+        <h3>DevOps fundamental</h3>
+        <p>Alison</p>
+      </div>
+    </div>
+
+    <button class="see-more-btn" id="openCertsModal">
+      See More
+    </button>
+  </section>
+
+  <!-- Certificates Modal -->
+  <div id="certsModal" class="certs-modal">
+    <div class="certs-modal-content">
+      <span class="close-certs">&times;</span>
+      <h2>All Certificates</h2>
+      <div class="certs-list">
+        <!-- Add as many as you want -->
+        <div class="cert-card">
+          <img src="cert4.jpg" alt="Certificate 4">
+          <h3>React Advanced</h3>
+          <p>Meta Certification</p>
+        </div>
+        <div class="cert-card">
+          <img src="cert5.jpg" alt="Certificate 5">
+          <h3>Python for Everybody</h3>
+          <p>University of Michigan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="contact-section" id="contact">
     <div class="contact-header">
       <h2>Let’s<br>Connect</h2>
       <button class="hire-btn2" id="hireBtn">
@@ -153,7 +215,7 @@
     </div>
 
     <div class="contact-info">
-      <div>
+      <div class="Contact-socials">
         <div class="brand">TobiCodes</div>
         <div class="socials">
           <a href="#"><i class="ri-instagram-line"></i></a>
@@ -177,6 +239,9 @@
     </div>
     <p class="footer-rights">All rights reserved at TobiCodes</p>
   </section>
+
+  <button id="darkModeToggle" class="dark-toggle">🌙</button>
+ 
   <!-- Hire Me Modal -->
   <div id="hireModal" class="hire-modal">
     <div class="hire-modal-content">
